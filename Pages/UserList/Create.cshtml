@@ -1,0 +1,52 @@
+﻿@page
+@model webvision.Pages.UserList.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<br />
+<h2>Create User</h2>
+<br />
+<div style="border:0px solid #bbb9b9; border-radius:10px;">
+    <form method="post">
+        <div asp-validation-summery="ModelOnly" class="text-danger"></div>
+        <div class="form-group row">
+            <label asp-for="userInfo.Name" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-5">
+                <input asp-for="userInfo.Name" class="form-control">
+            </div>
+            <span asp-validation-for="userInfo.Name" class="text-danger"></span>
+        </div>
+        <br />
+        <div class="form-group row">
+            <label asp-for="userInfo.Email" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-5">
+                <input asp-for="userInfo.Email" class="form-control">
+            </div>
+            <span asp-validation-for="userInfo.Email" class="text-danger"></span>
+        </div>
+        <br />
+         <div class="form-group row">
+            <label asp-for="userInfo.Phone" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-5">
+                <input asp-for="userInfo.Phone" class="form-control">
+            </div>
+            <span asp-validation-for="userInfo.Phone" class="text-danger"></span>
+         </div> 
+         <br />
+      
+         <div class="form-group row">
+            <div class="col-12 col-sm-6 col-md-6">
+                 <a asp-page="Index" class="btn btn-success btn-sm">Back to List</a>
+            </div>
+             <div class="col-12 col-sm-6 col-md-6">
+                 <input type="submit" value="Create" class="btn btn-primary btn-sm" />
+             </div>
+
+         </div>
+            
+    </form>
+</div>
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
